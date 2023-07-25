@@ -16,11 +16,13 @@ public class MovieController {
     @Autowired
     private MovieService movieService;
 
+//    @CrossOrigin(origins = "*")
     @GetMapping
     public ResponseEntity<List<Movie>> getAllMovies() {
         return new ResponseEntity<List<Movie>>(movieService.allMovies(), HttpStatus.OK);
     }
 
+//    @CrossOrigin(origins = "*")
     @GetMapping("/{imdbId}")
     public ResponseEntity<Optional<Movie>> getSingleMovie(@PathVariable String imdbId) {
         return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId), HttpStatus.OK);
