@@ -7,4 +7,4 @@ FROM eclipse-temurin
 VOLUME /tmp
 COPY target/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
-EXPOSE 5173
+RUN docker run -p 80:80
