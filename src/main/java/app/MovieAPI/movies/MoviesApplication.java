@@ -12,6 +12,7 @@ public class MoviesApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MoviesApplication.class, args);
+
 	}
 
 	@Bean
@@ -21,9 +22,11 @@ public class MoviesApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry
 						.addMapping("/**")
+						.allowedOrigins("*")
 						.allowedMethods(CorsConfiguration.ALL)
 						.allowedHeaders(CorsConfiguration.ALL)
 						.allowedOriginPatterns(CorsConfiguration.ALL);
+
 			}
 		};
 	}
